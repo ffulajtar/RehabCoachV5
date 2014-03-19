@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class LostActivity extends Activity {
 
@@ -77,6 +78,12 @@ public class LostActivity extends Activity {
 			startActivity(remind);	
 		}
 
+		public void findTransportation(View view)
+		{
+			Intent home = new Intent(this, TransportationActivity.class);
+			home.putExtra("theme", theme);
+			startActivity(home);
+		}
 
 }
 

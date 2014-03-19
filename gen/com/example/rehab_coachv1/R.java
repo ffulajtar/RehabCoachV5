@@ -149,10 +149,11 @@ public final class R {
         public static final int activity_profile=0x7f03000b;
         public static final int activity_reminder=0x7f03000c;
         public static final int activity_review=0x7f03000d;
-        public static final int activity_transportation=0x7f03000e;
-        public static final int fragment_reminder_dummy=0x7f03000f;
-        public static final int fragment_review_dummy=0x7f030010;
-        public static final int home_list_layout=0x7f030011;
+        public static final int activity_settings=0x7f03000e;
+        public static final int activity_transportation=0x7f03000f;
+        public static final int fragment_reminder_dummy=0x7f030010;
+        public static final int fragment_review_dummy=0x7f030011;
+        public static final int home_list_layout=0x7f030012;
     }
     public static final class menu {
         public static final int create_profile=0x7f0a0000;
