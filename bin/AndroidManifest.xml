@@ -27,6 +27,10 @@
             android:label="@string/title_activity_home" >
         </activity>
         <activity
+            android:name="com.example.rehab_coachv1.AllActivitiesActivity"
+            android:label="@string/title_activity_all" >
+        </activity>
+        <activity
             android:name="com.example.rehab_coachv1.ReminderActivity"
             android:label="@string/title_activity_reminder" >
         </activity>

@@ -10,12 +10,14 @@ import android.view.View;
 public class DuringActivity extends Activity {
 
 	String activity_name;
+	int activity_id;
 	int theme = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		theme = getIntent().getIntExtra("theme", 0);
+		activity_id = getIntent().getIntExtra("act_id", 0);
 		if (theme == 0)
 		{
 			setTheme(android.R.style.Theme_Holo_Light);
@@ -85,6 +87,7 @@ public class DuringActivity extends Activity {
 	{
 		Intent endActivity = new Intent(this, ReviewActivity.class);
 		endActivity.putExtra("act", activity_name);
+		endActivity.putExtra("act_id", activity_id);
 		endActivity.putExtra("theme", theme);
 		startActivity(endActivity);
 	}

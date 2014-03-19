@@ -6,6 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_home">HomeActivity</string>
 
+	<string name="title_activity_all">AllActivitiesActivity</string>
     <color name="activity1">#add8e6</color>
 
     <string name="plan_activity">Plan an Activity</string>
@@ -54,7 +55,8 @@
     <string name="title_activity_emergency_contact">EmergencyContactActivity</string>
     <string name="bus">Find nearest bus route</string>
     <string name="taxi">Call Taxi</string>
-    <string name="home_title">Activities</string>
+    <string name="home_title">Your Activities</string>
+    <string name="all_activities_title">All Activities</string>
     <string name="lost_title">You Are Here</string>
     <string name="profile_title">Profile</string>
     <string name="transportation_title">Do you need helping finding transportation?</string>

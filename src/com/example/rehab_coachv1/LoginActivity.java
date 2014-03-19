@@ -45,9 +45,9 @@ public class LoginActivity extends Activity {
 	
 	public void adminMode(View view)
 	{
-		Intent home = new Intent(this, AdminActivity.class);
-		home.putExtra("theme", theme);
-		startActivity(home);
+		Intent admin = new Intent(this, AdminActivity.class);
+		admin.putExtra("theme", theme);
+		startActivity(admin);
 	}
 	
 	public void changetheme(View view)

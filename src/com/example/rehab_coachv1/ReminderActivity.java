@@ -38,13 +38,14 @@ public class ReminderActivity extends FragmentActivity {
 	 */
 	ViewPager mViewPager;
 
-	String activity_name;
+	private String activity_name;
+	private int activity_id;
 	int theme = 0;
 	
 	private SQLiteDatabase database;
 	ArrayList<String> remind_list = new ArrayList<String>();
 	
-	private void getReminders(int activity_id){
+	public void getReminders(int activity_id){
 		ExternalDbOpenHelper dbHelper = new ExternalDbOpenHelper(this, "rehab_coach");
 		database = dbHelper.openDataBase();
 		
@@ -64,7 +65,7 @@ public class ReminderActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		theme = getIntent().getIntExtra("theme", 0);
-		int activity_id = getIntent().getIntExtra("act_id",0);
+		activity_id = getIntent().getIntExtra("act_id",0);
 		if (theme == 0)
 		{
 			setTheme(android.R.style.Theme_Holo_Light);
@@ -289,6 +290,7 @@ public class ReminderActivity extends FragmentActivity {
 	{
 		Intent currActivity = new Intent(this, DuringActivity.class);
 		currActivity.putExtra("act", activity_name);
+		currActivity.putExtra("act_id", activity_id);
 		currActivity.putExtra("theme", theme);
 		startActivity(currActivity);
 	}

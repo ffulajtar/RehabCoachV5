@@ -40,6 +40,7 @@ public class ReviewActivity extends FragmentActivity {
 	ViewPager mViewPager;
 
 	String activity_name;
+	int activity_id;
 	int theme = 0;
 	static int val1 = 0;
 	static int val2 = 0;
@@ -51,6 +52,8 @@ public class ReviewActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		theme = getIntent().getIntExtra("theme", 0);
+		activity_name = getIntent().getStringExtra("act");
+		activity_id = getIntent().getIntExtra("act_id", 0);
 		if (theme == 0)
 		{
 			setTheme(android.R.style.Theme_Holo_Light);
@@ -66,7 +69,6 @@ public class ReviewActivity extends FragmentActivity {
 		review_list.add("How successful was this activity?");
 		review_list.add("How easily did you find transportation?");
 		review_list.add("How likely are you to do this activity again?");
-		activity_name = getIntent().getStringExtra("act");
 		TextView name = (TextView) findViewById(R.id.title);
 		name.setText(activity_name);
 		// Create the adapter that will return a fragment for each of the three
@@ -364,6 +366,7 @@ public class ReviewActivity extends FragmentActivity {
 		currActivity.putExtra("val3",  val3);
 		currActivity.putExtra("val4",  val4);
 		currActivity.putExtra("val5",  val5);
+		currActivity.putExtra("act_id", activity_id);
 		startActivity(currActivity);
 	}
 }

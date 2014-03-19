@@ -16,15 +16,18 @@ import android.widget.ListView;
 
 public class HomeActivity extends Activity {
 
-	ArrayList<String> activity_names_list = new ArrayList<String>();
-	ArrayList<Integer> activity_ids_list = new ArrayList<Integer>();
+	ArrayList<String> all_activity_names_list = new ArrayList<String>();
+	ArrayList<Integer> all_activity_ids_list = new ArrayList<Integer>();
+	
+	ArrayList<String> priority_activity_names_list = new ArrayList<String>();
+	ArrayList<Integer> priority_activity_ids_list = new ArrayList<Integer>();
 	
 	
 	int theme = 0;
 	private SQLiteDatabase database;
 	
-	
-	private void getActivities(){
+	/*
+	private void getAllActivities(){
 		ExternalDbOpenHelper dbHelper = new ExternalDbOpenHelper(this, "rehab_coach");
 		database = dbHelper.openDataBase();
 				
@@ -33,20 +36,66 @@ public class HomeActivity extends Activity {
 		
 		while(!activityCursor.isAfterLast()){
 			
+			This is a hacky way to keep track of what names and id's go with the activities that are being represented on the screen.
+			Because the ArrayAdapter needed an array of Strings, it was easier to do this than to make an array of tuples and try to decompose them for the String ArrayAdapter 
+			all_activity_names_list.add(activityCursor.getString(activityCursor.getColumnIndex("name")));
+			all_activity_ids_list.add(activityCursor.getInt(activityCursor.getColumnIndex("_id")));
+
+			activityCursor.moveToNext();
+		}
+	}*/
+	
+	private void getPrioritizedActivities(){
+		//SELECT * FROM Table_Name LIMIT 5;
+		ExternalDbOpenHelper dbHelper = new ExternalDbOpenHelper(this, "rehab_coach");
+		database = dbHelper.openDataBase();
+		
+		Cursor activityCursor = database.query("activity", new String[]{"_id", "name"} , null, null, null, null, "times_complete DESC",Integer.toString(3));
+//		Cursor activityCursor = database.rawQuery("select _id, name from activity ORDER BY times_complete DESC LIMIT ?", new String[]{Integer.toString(3)});
+		activityCursor.moveToFirst();
+		while(!activityCursor.isAfterLast()){
+			
 			/*This is a hacky way to keep track of what names and id's go with the activities that are being represented on the screen.
 			Because the ArrayAdapter needed an array of Strings, it was easier to do this than to make an array of tuples and try to decompose them for the String ArrayAdapter */
-			activity_names_list.add(activityCursor.getString(activityCursor.getColumnIndex("name")));
-			activity_ids_list.add(activityCursor.getInt(activityCursor.getColumnIndex("_id")));
+			priority_activity_names_list.add(activityCursor.getString(activityCursor.getColumnIndex("name")));
+			priority_activity_ids_list.add(activityCursor.getInt(activityCursor.getColumnIndex("_id")));
 
 			activityCursor.moveToNext();
 		}
 	}
 	
+	private void getLeastRecentActivity(){
+		ExternalDbOpenHelper dbHelper = new ExternalDbOpenHelper(this, "rehab_coach");
+		database = dbHelper.openDataBase();
+		
+		Cursor activityCursor = database.query("activity", new String[]{"_id", "name"} , null, null, null, null, "last_time_completed ASC",Integer.toString(1));
+//		Cursor activityCursor = database.rawQuery("select _id, name from activity ORDER BY times_complete DESC LIMIT ?", new String[]{Integer.toString(3)});
+		activityCursor.moveToFirst();
+		while(!activityCursor.isAfterLast()){
+			
+			/*This is a hacky way to keep track of what names and id's go with the activities that are being represented on the screen.
+			Because the ArrayAdapter needed an array of Strings, it was easier to do this than to make an array of tuples and try to decompose them for the String ArrayAdapter */
+			priority_activity_names_list.add(activityCursor.getString(activityCursor.getColumnIndex("name")));
+			priority_activity_ids_list.add(activityCursor.getInt(activityCursor.getColumnIndex("_id")));
+
+			activityCursor.moveToNext();
+		}
+	}
+	
+	/*
+	 * Home Screen now shows a list of 4 activities, the 3 most completed, followed by the one that is least recently completed.
+	 * The least recently completed needs to be put into its own section and colored differently
+	 */
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		getActivities();
+//		getAllActivities();
+		getPrioritizedActivities();
+		getLeastRecentActivity();
 		
 		theme = getIntent().getIntExtra("theme", 0);
 		if (theme == 0)
@@ -58,7 +107,10 @@ public class HomeActivity extends Activity {
 			setTheme(android.R.style.Theme_Holo);
 		}
 		setContentView(R.layout.activity_home);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, activity_names_list);
+		
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, priority_activity_names_list);
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, all_activity_names_list);
+
 		ListView listView = (ListView) findViewById(R.id.list);
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -66,15 +118,29 @@ public class HomeActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
 			{
 				Intent remind = new Intent (HomeActivity.this, ReminderActivity.class);
-				remind.putExtra("act", activity_names_list.get(position));
+				
+				remind.putExtra("act", priority_activity_names_list.get(position));
+//				remind.putExtra("act", all_activity_names_list.get(position));
+				
 				remind.putExtra("theme", theme);
-				//position starts at index 0.  We need to pass in the activity_id, which will be position+1 for now
-				//This will likely change when we have a prioritized activity list
-				remind.putExtra("act_id", activity_ids_list.get(position));
+				
+				remind.putExtra("act_id", priority_activity_ids_list.get(position));
+//				remind.putExtra("act_id", all_activity_ids_list.get(position));
+				
+				
 				startActivity(remind);
 			}
 		});
 	}
+	
+	
+	public void goToAllActivities(View view)
+	{
+		Intent home = new Intent(this, AllActivitiesActivity.class);
+		home.putExtra("theme", theme);
+		startActivity(home);
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
