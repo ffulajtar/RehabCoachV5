@@ -76,9 +76,9 @@ public final class R {
         public static final int button3=0x7f0b0003;
         public static final int buttons_line=0x7f0b0023;
         public static final int call_911=0x7f0b001b;
-        public static final int change_contact_info=0x7f0b002a;
-        public static final int change_emergency_contact=0x7f0b002b;
-        public static final int change_password=0x7f0b0029;
+        public static final int change_contact_info=0x7f0b0028;
+        public static final int change_emergency_contact=0x7f0b0029;
+        public static final int change_password=0x7f0b002a;
         public static final int change_theme=0x7f0b0007;
         public static final int changetheme=0x7f0b0026;
         public static final int disability_spinner=0x7f0b0015;
@@ -93,6 +93,7 @@ public final class R {
         public static final int editText9=0x7f0b0013;
         public static final int emergency_contact=0x7f0b001a;
         public static final int end_button=0x7f0b0017;
+        public static final int end_review=0x7f0b002d;
         public static final int help_screen=0x7f0b0043;
         public static final int home_screen=0x7f0b0041;
         public static final int imageView1=0x7f0b0018;
@@ -109,8 +110,8 @@ public final class R {
         public static final int page_3=0x7f0b0034;
         public static final int page_4=0x7f0b0035;
         public static final int page_5=0x7f0b0036;
-        public static final int pager=0x7f0b002c;
-        public static final int pager_title_strip=0x7f0b002d;
+        public static final int pager=0x7f0b002b;
+        public static final int pager_title_strip=0x7f0b002c;
         public static final int password=0x7f0b0022;
         public static final int profile_screen=0x7f0b0042;
         public static final int progress=0x7f0b003f;
@@ -132,7 +133,6 @@ public final class R {
         public static final int title=0x7f0b0008;
         public static final int transportation=0x7f0b001c;
         public static final int username=0x7f0b0021;
-        public static final int view_goals=0x7f0b0028;
     }
     public static final class layout {
         public static final int activity_admin=0x7f030000;

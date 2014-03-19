@@ -327,6 +327,8 @@ public class ReviewActivity extends FragmentActivity {
 					.findViewById(R.id.review_text);
 			dummyTextView.setText(getArguments().getString(
 					ARG_SECTION_NUMBER));
+			Button end_button = (Button) rootView.findViewById(R.id.end_review);
+			end_button.setVisibility(View.VISIBLE);
 			progress = (TextView) rootView.findViewById(R.id.progress);
 			ImageView image = (ImageView) rootView.findViewById(R.id.page_5);
 			image.setVisibility(View.VISIBLE);

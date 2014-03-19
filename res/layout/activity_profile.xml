@@ -33,22 +33,6 @@
         android:src="@drawable/profile_test" />
         
     <Button 
-        android:id="@+id/view_goals"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/view_goals"
-        />
-        
-    <Button 
-        android:id="@+id/change_password"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/change_password"
-        />
-        
-    <Button 
         android:id="@+id/change_contact_info"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -62,6 +46,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/change_emergency_contact"
+        />
+    
+        <Button 
+        android:id="@+id/change_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/change_password"
         />
 
 </LinearLayout> 

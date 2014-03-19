@@ -1,5 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     
+        <item android:id="@+id/home_screen"
+          android:title="@string/home"
+          android:icon="@drawable/android_home"
+          android:showAsAction="never" />
+          
         <item android:id="@+id/help_screen"
           android:icon="@drawable/help_icon"
           android:title="@string/help"
