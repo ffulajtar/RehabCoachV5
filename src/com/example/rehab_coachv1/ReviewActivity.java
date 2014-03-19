@@ -87,11 +87,11 @@ public class ReviewActivity extends FragmentActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		if (theme == 1)
 		{
-			getMenuInflater().inflate(R.menu.help_dark, menu);
+			getMenuInflater().inflate(R.menu.dark, menu);
 		}
 		else
 		{
-			getMenuInflater().inflate(R.menu.help_light, menu);
+			getMenuInflater().inflate(R.menu.light, menu);
 		}
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -109,6 +109,9 @@ public class ReviewActivity extends FragmentActivity {
 	            return true;
 	        case R.id.help_screen:
 	            openHelp();
+	            return true;
+	        case R.id.settings_screen:
+	            openSettings();
 	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
@@ -131,6 +134,12 @@ public class ReviewActivity extends FragmentActivity {
 
 	public void openHelp() {
 		Intent remind = new Intent (this, HelpActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);	
+	}
+	
+	public void openSettings() {
+		Intent remind = new Intent (this, SettingsActivity.class);
 		remind.putExtra("theme", theme);
 		startActivity(remind);	
 	}

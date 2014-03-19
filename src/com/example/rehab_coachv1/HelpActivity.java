@@ -54,6 +54,9 @@ public class HelpActivity extends Activity {
 	        case R.id.help_screen:
 	            openHelp();
 	            return true;
+	        case R.id.settings_screen:
+	            openSettings();
+	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -75,6 +78,12 @@ public class HelpActivity extends Activity {
 
 	public void openHelp() {
 		Intent remind = new Intent (this, HelpActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);	
+	}
+	
+	public void openSettings() {
+		Intent remind = new Intent (this, SettingsActivity.class);
 		remind.putExtra("theme", theme);
 		startActivity(remind);	
 	}

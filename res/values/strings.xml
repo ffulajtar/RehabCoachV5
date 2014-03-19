@@ -5,8 +5,8 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_home">Rehab_CoachV1</string>
+    <string name="title_activity_all">Rehab_CoachV1</string>
 
-	<string name="title_activity_all">Rehab_CoachV1</string>
     <color name="activity1">#add8e6</color>
 
     <string name="plan_activity">Plan an Activity</string>
@@ -65,10 +65,13 @@
     <string name="impairments">Add/Remove Impairments</string>
     <string name="activities">Add/Remove Activities</string>
     <string name="title_activity_create_profile">Rehab_CoachV1</string>
-	<string name="disability1">Spinal Cord Injury</string>
+    <string name="disability1">Spinal Cord Injury</string>
     <string name="disability2">Deaf</string>
     <string name="disability3">Blind</string>
     <string name="disability4">Wheelchair</string>
     <string name="least_activity_text">You haven\'t done this is a while</string>
-    
+    <string name="title_activity_settings">SettingsActivity</string>
+	<string name="change_taxi">Change preferred taxi company</string>
+	<string name="settings">Settings</string>
+
 </resources>

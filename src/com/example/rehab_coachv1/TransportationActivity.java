@@ -23,19 +23,21 @@ public class TransportationActivity extends Activity {
 		}
 		setContentView(R.layout.activity_transportation);
 	} 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		if (theme == 0)
-		{
-			getMenuInflater().inflate(R.menu.light, menu);
-		}
-		else
+		if (theme == 1)
 		{
 			getMenuInflater().inflate(R.menu.dark, menu);
 		}
+		else
+		{
+			getMenuInflater().inflate(R.menu.light, menu);
+		}
 		return super.onCreateOptionsMenu(menu);
 	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
@@ -50,30 +52,39 @@ public class TransportationActivity extends Activity {
 	        case R.id.help_screen:
 	            openHelp();
 	            return true;
+	        case R.id.settings_screen:
+	            openSettings();
+	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-	    
-		public void openHome() {
-			Intent remind = new Intent (this, HomeActivity.class);
-			remind.putExtra("theme", theme);
-			startActivity(remind);
-			
-		}
+	
+	public void openHome() {
+		Intent remind = new Intent (this, HomeActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);
+		
+	}
 
-		public void openProfile() {
-			Intent remind = new Intent (this, ProfileActivity.class);
-			remind.putExtra("theme", theme);
-			startActivity(remind);
-			
-		}
+	public void openProfile() {
+		Intent remind = new Intent (this, ProfileActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);
+		
+	}
 
-		public void openHelp() {
-			Intent remind = new Intent (this, HelpActivity.class);
-			remind.putExtra("theme", theme);
-			startActivity(remind);	
-		}
+	public void openHelp() {
+		Intent remind = new Intent (this, HelpActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);	
+	}
+	
+	public void openSettings() {
+		Intent remind = new Intent (this, SettingsActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);	
+	}
 
 
 }

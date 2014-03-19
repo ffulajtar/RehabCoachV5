@@ -74,6 +74,10 @@
             android:name="com.example.rehab_coachv1.CreateProfileActivity"
             android:label="@string/title_activity_create_profile" >
         </activity>
+        <activity
+            android:name="com.example.rehab_coachv1.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>

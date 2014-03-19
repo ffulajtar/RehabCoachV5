@@ -53,32 +53,41 @@ public class LostActivity extends Activity {
 	        case R.id.help_screen:
 	            openHelp();
 	            return true;
+	        case R.id.settings_screen:
+	            openSettings();
+	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-	    
-		public void openHome() {
-			Intent remind = new Intent (this, HomeActivity.class);
-			remind.putExtra("theme", theme);
-			startActivity(remind);
-			
-		}
+	
+	public void openHome() {
+		Intent remind = new Intent (this, HomeActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);
+		
+	}
 
-		public void openProfile() {
-			Intent remind = new Intent (this, ProfileActivity.class);
-			remind.putExtra("theme", theme);
-			startActivity(remind);
-			
-		}
+	public void openProfile() {
+		Intent remind = new Intent (this, ProfileActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);
+		
+	}
 
-		public void openHelp() {
-			Intent remind = new Intent (this, HelpActivity.class);
-			remind.putExtra("theme", theme);
-			startActivity(remind);	
-		}
-
-		public void findTransportation(View view)
+	public void openHelp() {
+		Intent remind = new Intent (this, HelpActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);	
+	}
+	
+	public void openSettings() {
+		Intent remind = new Intent (this, SettingsActivity.class);
+		remind.putExtra("theme", theme);
+		startActivity(remind);	
+	}
+	
+	public void findTransportation(View view)
 		{
 			Intent home = new Intent(this, TransportationActivity.class);
 			home.putExtra("theme", theme);

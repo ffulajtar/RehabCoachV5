@@ -23,6 +23,11 @@ public final class R {
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
@@ -65,74 +70,74 @@ public final class R {
         public static final int sunimage=0x7f02001e;
     }
     public static final class id {
-        public static final int ScrollView01=0x7f0b0009;
-        public static final int action_settings=0x7f0b0040;
-        public static final int admin=0x7f0b0025;
-        public static final int all_activities=0x7f0b0004;
-        public static final int all_activities_title=0x7f0b0006;
-        public static final int bus=0x7f0b002e;
+        public static final int ScrollView01=0x7f0b0008;
+        public static final int action_settings=0x7f0b003f;
+        public static final int admin=0x7f0b0022;
+        public static final int all_activities=0x7f0b0003;
+        public static final int all_activities_title=0x7f0b0005;
+        public static final int bus=0x7f0b002d;
         public static final int button1=0x7f0b0001;
         public static final int button2=0x7f0b0002;
-        public static final int button3=0x7f0b0003;
-        public static final int buttons_line=0x7f0b0023;
-        public static final int call_911=0x7f0b001b;
-        public static final int change_contact_info=0x7f0b0028;
-        public static final int change_emergency_contact=0x7f0b0029;
-        public static final int change_password=0x7f0b002a;
-        public static final int change_theme=0x7f0b0007;
-        public static final int changetheme=0x7f0b0026;
-        public static final int disability_spinner=0x7f0b0015;
-        public static final int editText1=0x7f0b000b;
-        public static final int editText2=0x7f0b000a;
-        public static final int editText3=0x7f0b000c;
-        public static final int editText4=0x7f0b000d;
-        public static final int editText5=0x7f0b000e;
-        public static final int editText6=0x7f0b0010;
-        public static final int editText7=0x7f0b0011;
-        public static final int editText8=0x7f0b0012;
-        public static final int editText9=0x7f0b0013;
-        public static final int emergency_contact=0x7f0b001a;
-        public static final int end_button=0x7f0b0017;
-        public static final int end_review=0x7f0b002d;
+        public static final int buttons_line=0x7f0b0020;
+        public static final int call_911=0x7f0b0018;
+        public static final int change_contact_info=0x7f0b0025;
+        public static final int change_emergency_contact=0x7f0b0026;
+        public static final int change_pass=0x7f0b002b;
+        public static final int change_password=0x7f0b0027;
+        public static final int change_taxi=0x7f0b002c;
+        public static final int change_theme=0x7f0b0006;
+        public static final int changetheme=0x7f0b0023;
+        public static final int editText1=0x7f0b000a;
+        public static final int editText2=0x7f0b0009;
+        public static final int editText3=0x7f0b000b;
+        public static final int editText4=0x7f0b000c;
+        public static final int editText5=0x7f0b000d;
+        public static final int editText6=0x7f0b000f;
+        public static final int editText7=0x7f0b0010;
+        public static final int editText8=0x7f0b0011;
+        public static final int editText9=0x7f0b0012;
+        public static final int emergency_contact=0x7f0b0017;
+        public static final int end_button=0x7f0b0014;
+        public static final int end_review=0x7f0b002a;
         public static final int help_screen=0x7f0b0043;
-        public static final int home_screen=0x7f0b0041;
-        public static final int imageView1=0x7f0b0018;
-        public static final int least=0x7f0b001e;
-        public static final int least_activity_text=0x7f0b001d;
-        public static final int line=0x7f0b0020;
-        public static final int list=0x7f0b0005;
-        public static final int login=0x7f0b0024;
-        public static final int lost=0x7f0b0019;
-        public static final int map=0x7f0b0027;
-        public static final int osumclogo=0x7f0b001f;
-        public static final int page_1=0x7f0b0032;
-        public static final int page_2=0x7f0b0033;
-        public static final int page_3=0x7f0b0034;
-        public static final int page_4=0x7f0b0035;
-        public static final int page_5=0x7f0b0036;
-        public static final int pager=0x7f0b002b;
-        public static final int pager_title_strip=0x7f0b002c;
-        public static final int password=0x7f0b0022;
-        public static final int profile_screen=0x7f0b0042;
-        public static final int progress=0x7f0b003f;
-        public static final int remember=0x7f0b0030;
-        public static final int reminder_text=0x7f0b0031;
-        public static final int review=0x7f0b0038;
-        public static final int review_text=0x7f0b0039;
-        public static final int seek_1=0x7f0b003a;
-        public static final int seek_2=0x7f0b003b;
-        public static final int seek_3=0x7f0b003c;
-        public static final int seek_4=0x7f0b003d;
-        public static final int seek_5=0x7f0b003e;
-        public static final int start_button=0x7f0b0037;
-        public static final int submit=0x7f0b0016;
-        public static final int taxi=0x7f0b002f;
+        public static final int home_screen=0x7f0b0040;
+        public static final int imageView1=0x7f0b0015;
+        public static final int least=0x7f0b001b;
+        public static final int least_activity_text=0x7f0b001a;
+        public static final int line=0x7f0b001d;
+        public static final int list=0x7f0b0004;
+        public static final int login=0x7f0b0021;
+        public static final int lost=0x7f0b0016;
+        public static final int map=0x7f0b0024;
+        public static final int osumclogo=0x7f0b001c;
+        public static final int page_1=0x7f0b0031;
+        public static final int page_2=0x7f0b0032;
+        public static final int page_3=0x7f0b0033;
+        public static final int page_4=0x7f0b0034;
+        public static final int page_5=0x7f0b0035;
+        public static final int pager=0x7f0b0028;
+        public static final int pager_title_strip=0x7f0b0029;
+        public static final int password=0x7f0b001f;
+        public static final int profile_screen=0x7f0b0041;
+        public static final int progress=0x7f0b003e;
+        public static final int remember=0x7f0b002f;
+        public static final int reminder_text=0x7f0b0030;
+        public static final int review=0x7f0b0037;
+        public static final int review_text=0x7f0b0038;
+        public static final int seek_1=0x7f0b0039;
+        public static final int seek_2=0x7f0b003a;
+        public static final int seek_3=0x7f0b003b;
+        public static final int seek_4=0x7f0b003c;
+        public static final int seek_5=0x7f0b003d;
+        public static final int settings_screen=0x7f0b0042;
+        public static final int start_button=0x7f0b0036;
+        public static final int submit=0x7f0b0013;
+        public static final int taxi=0x7f0b002e;
         public static final int textView1=0x7f0b0000;
-        public static final int textView2=0x7f0b000f;
-        public static final int textView3=0x7f0b0014;
-        public static final int title=0x7f0b0008;
-        public static final int transportation=0x7f0b001c;
-        public static final int username=0x7f0b0021;
+        public static final int textView2=0x7f0b000e;
+        public static final int title=0x7f0b0007;
+        public static final int transportation=0x7f0b0019;
+        public static final int username=0x7f0b001e;
     }
     public static final class layout {
         public static final int activity_admin=0x7f030000;
@@ -172,6 +177,7 @@ public final class R {
         public static final int change_contact_info=0x7f070024;
         public static final int change_emergency_contact=0x7f070025;
         public static final int change_password=0x7f070023;
+        public static final int change_taxi=0x7f070040;
         public static final int change_theme=0x7f07001a;
         public static final int create_patient=0x7f070036;
         public static final int disability1=0x7f07003a;
@@ -202,6 +208,7 @@ public final class R {
         public static final int remember=0x7f07000a;
         public static final int return_home=0x7f070015;
         public static final int review=0x7f070014;
+        public static final int settings=0x7f070041;
         public static final int start_activity=0x7f07000f;
         public static final int taxi=0x7f07002f;
         public static final int title=0x7f07000b;
@@ -217,6 +224,7 @@ public final class R {
         public static final int title_activity_profile=0x7f070021;
         public static final int title_activity_reminder=0x7f070006;
         public static final int title_activity_review=0x7f070013;
+        public static final int title_activity_settings=0x7f07003f;
         public static final int title_activity_transportation=0x7f07002b;
         public static final int title_section1=0x7f070007;
         public static final int title_section2=0x7f070008;
