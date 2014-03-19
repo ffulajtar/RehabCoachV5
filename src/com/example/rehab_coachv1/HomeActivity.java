@@ -22,6 +22,9 @@ public class HomeActivity extends Activity {
 	ArrayList<String> priority_activity_names_list = new ArrayList<String>();
 	ArrayList<Integer> priority_activity_ids_list = new ArrayList<Integer>();
 	
+	ArrayList<String> least_activity_name = new ArrayList<String>();
+	ArrayList<Integer> least_activity_id = new ArrayList<Integer>();
+	
 	
 	int theme = 0;
 	private SQLiteDatabase database;
@@ -75,8 +78,8 @@ public class HomeActivity extends Activity {
 			
 			/*This is a hacky way to keep track of what names and id's go with the activities that are being represented on the screen.
 			Because the ArrayAdapter needed an array of Strings, it was easier to do this than to make an array of tuples and try to decompose them for the String ArrayAdapter */
-			priority_activity_names_list.add(activityCursor.getString(activityCursor.getColumnIndex("name")));
-			priority_activity_ids_list.add(activityCursor.getInt(activityCursor.getColumnIndex("_id")));
+			least_activity_name.add(activityCursor.getString(activityCursor.getColumnIndex("name")));
+			least_activity_id.add(activityCursor.getInt(activityCursor.getColumnIndex("_id")));
 
 			activityCursor.moveToNext();
 		}
@@ -108,11 +111,33 @@ public class HomeActivity extends Activity {
 		}
 		setContentView(R.layout.activity_home);
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, priority_activity_names_list);
+		ArrayAdapter<String> list_adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, priority_activity_names_list);
+		ArrayAdapter<String> least_adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, least_activity_name);
 //		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, all_activity_names_list);
 
+		ListView leastView = (ListView) findViewById(R.id.least);
+		leastView.setAdapter(least_adapter);
+		leastView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+			{
+				Intent remind = new Intent (HomeActivity.this, ReminderActivity.class);
+				
+				remind.putExtra("act", least_activity_name.get(position));
+//				remind.putExtra("act", all_activity_names_list.get(position));
+				
+				remind.putExtra("theme", theme);
+				
+				remind.putExtra("act_id", least_activity_id.get(position));
+//				remind.putExtra("act_id", all_activity_ids_list.get(position));
+				
+				
+				startActivity(remind);
+			}
+		});
+		
 		ListView listView = (ListView) findViewById(R.id.list);
-		listView.setAdapter(adapter);
+		listView.setAdapter(list_adapter);
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
@@ -195,6 +220,7 @@ public class HomeActivity extends Activity {
 		startActivity(remind);	
 	}
 
+	
 	public void changetheme(View view)
 	{
 		if (theme == 0)

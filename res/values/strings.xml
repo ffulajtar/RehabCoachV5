@@ -69,5 +69,6 @@
     <string name="disability2">Deaf</string>
     <string name="disability3">Blind</string>
     <string name="disability4">Wheelchair</string>
+    <string name="least_activity_text">You haven\'t done this is a while</string>
     
 </resources>
