@@ -25,8 +25,7 @@
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:text="@string/change_theme"
-        android:onClick="changeTheme" />
+        android:text="@string/change_theme" />
 
     <Button
         android:id="@+id/change_pass"
@@ -35,8 +34,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/change_theme"
         android:layout_marginTop="25dp"
-        android:text="@string/change_password"
-        android:onClick="changePassword" />
+        android:text="@string/change_password" />
 
     <Button
         android:id="@+id/change_taxi"
@@ -45,8 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/change_pass"
         android:layout_marginTop="25dp"
-        android:text="@string/change_taxi"
-        android:onClick="changeTaxi" />
+        android:text="@string/change_taxi" />
 
 
 </RelativeLayout>

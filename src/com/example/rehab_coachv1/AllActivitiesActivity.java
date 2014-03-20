@@ -19,8 +19,6 @@ public class AllActivitiesActivity extends Activity {
 	ArrayList<String> all_activity_names_list = new ArrayList<String>();
 	ArrayList<Integer> all_activity_ids_list = new ArrayList<Integer>();
 	
-	
-	int theme = 0;
 	private SQLiteDatabase database;
 	
 	
@@ -45,7 +43,6 @@ public class AllActivitiesActivity extends Activity {
 	public void goHome(View view)
 	{
 		Intent home = new Intent(this, HomeActivity.class);
-		home.putExtra("theme", theme);
 		startActivity(home);
 	}
 	
@@ -55,15 +52,8 @@ public class AllActivitiesActivity extends Activity {
 		
 		getAllActivities();
 		
-		theme = getIntent().getIntExtra("theme", 0);
-		if (theme == 0)
-		{
-			setTheme(android.R.style.Theme_Holo_Light);
-		}
-		else
-		{
-			setTheme(android.R.style.Theme_Holo);
-		}
+
+		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.activity_all);
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, all_activity_names_list);
@@ -78,8 +68,6 @@ public class AllActivitiesActivity extends Activity {
 
 				remind.putExtra("act", all_activity_names_list.get(position));
 				
-				remind.putExtra("theme", theme);
-				
 				remind.putExtra("act_id", all_activity_ids_list.get(position));
 				
 				
@@ -93,15 +81,7 @@ public class AllActivitiesActivity extends Activity {
 		
 		getAllActivities();
 		
-		theme = getIntent().getIntExtra("theme", 0);
-		if (theme == 0)
-		{
-			setTheme(android.R.style.Theme_Holo_Light);
-		}
-		else
-		{
-			setTheme(android.R.style.Theme_Holo);
-		}
+		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.activity_home);
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.home_list_layout, all_activity_names_list);
@@ -116,8 +96,6 @@ public class AllActivitiesActivity extends Activity {
 				
 				remind.putExtra("act", all_activity_names_list.get(position));
 				
-				remind.putExtra("theme", theme);
-				
 				remind.putExtra("act_id", all_activity_ids_list.get(position));
 				
 				
@@ -129,14 +107,7 @@ public class AllActivitiesActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		if (theme == 1)
-		{
-			getMenuInflater().inflate(R.menu.dark, menu);
-		}
-		else
-		{
-			getMenuInflater().inflate(R.menu.light, menu);
-		}
+		getMenuInflater().inflate(R.menu.dark, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -164,46 +135,24 @@ public class AllActivitiesActivity extends Activity {
 	
 	public void openHome() {
 		Intent remind = new Intent (this, HomeActivity.class);
-		remind.putExtra("theme", theme);
 		startActivity(remind);
 		
 	}
 
 	public void openProfile() {
 		Intent remind = new Intent (this, ProfileActivity.class);
-		remind.putExtra("theme", theme);
 		startActivity(remind);
 		
 	}
 
 	public void openHelp() {
 		Intent remind = new Intent (this, HelpActivity.class);
-		remind.putExtra("theme", theme);
 		startActivity(remind);	
 	}
 	
 	public void openSettings() {
 		Intent remind = new Intent (this, SettingsActivity.class);
-		remind.putExtra("theme", theme);
 		startActivity(remind);	
 	}
-
-	public void changetheme(View view)
-	{
-		if (theme == 0)
-		{
-			theme = 1;
-			Intent remind = new Intent (this, HomeActivity.class);
-			remind.putExtra("theme", theme);
-			startActivity(remind);
-		}
-		else
-		{
-			theme = 0;
-			Intent remind = new Intent (this, HomeActivity.class);
-			remind.putExtra("theme", theme);
-			startActivity(remind);
-		}
-	}
-
+	
 }

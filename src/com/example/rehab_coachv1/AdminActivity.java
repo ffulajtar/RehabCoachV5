@@ -8,20 +8,10 @@ import android.view.View;
 
 public class AdminActivity extends Activity {
 
-	int theme = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		theme = getIntent().getIntExtra("theme", 1);
-		if (theme == 0)
-		{
-			setTheme(android.R.style.Theme_Holo_Light);
-		}
-		else
-		{
-			setTheme(android.R.style.Theme_Holo);
-		}
 		setContentView(R.layout.activity_admin);
 	}
 
@@ -34,19 +24,11 @@ public class AdminActivity extends Activity {
 	
 	public void createProfile(View view) {
 		Intent create = new Intent(this, CreateProfileActivity.class);
-		create.putExtra("theme", theme);
 		startActivity(create);
 	}
 
 	public void editActivities(View view) {
 		Intent home = new Intent(this, HomeActivity.class);
-		home.putExtra("theme", theme);
-		startActivity(home);
-	}
-
-	public void editImpairments(View view) {
-		Intent home = new Intent(this, HomeActivity.class);
-		home.putExtra("theme", theme);
 		startActivity(home);
 	}
 

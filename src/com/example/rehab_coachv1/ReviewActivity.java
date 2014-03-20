@@ -41,7 +41,6 @@ public class ReviewActivity extends FragmentActivity {
 
 	String activity_name;
 	int activity_id;
-	int theme = 0;
 	static int val1 = 0;
 	static int val2 = 0;
 	static int val3 = 0;
@@ -51,17 +50,9 @@ public class ReviewActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		theme = getIntent().getIntExtra("theme", 0);
 		activity_name = getIntent().getStringExtra("act");
 		activity_id = getIntent().getIntExtra("act_id", 0);
-		if (theme == 0)
-		{
-			setTheme(android.R.style.Theme_Holo_Light);
-		}
-		else
-		{
-			setTheme(android.R.style.Theme_Holo);
-		}
+		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.activity_review);
 		ArrayList <String> review_list = new ArrayList<String>(); 
 		review_list.add("How comfortable were you during this activity?");
@@ -85,14 +76,9 @@ public class ReviewActivity extends FragmentActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		if (theme == 1)
-		{
+
 			getMenuInflater().inflate(R.menu.dark, menu);
-		}
-		else
-		{
-			getMenuInflater().inflate(R.menu.light, menu);
-		}
+
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -120,27 +106,23 @@ public class ReviewActivity extends FragmentActivity {
 	
 	public void openHome() {
 		Intent remind = new Intent (this, HomeActivity.class);
-		remind.putExtra("theme", theme);
 		startActivity(remind);
 		
 	}
 
 	public void openProfile() {
 		Intent remind = new Intent (this, ProfileActivity.class);
-		remind.putExtra("theme", theme);
 		startActivity(remind);
 		
 	}
 
 	public void openHelp() {
 		Intent remind = new Intent (this, HelpActivity.class);
-		remind.putExtra("theme", theme);
 		startActivity(remind);	
 	}
 	
 	public void openSettings() {
 		Intent remind = new Intent (this, SettingsActivity.class);
-		remind.putExtra("theme", theme);
 		startActivity(remind);	
 	}
 
@@ -371,7 +353,6 @@ public class ReviewActivity extends FragmentActivity {
 	public void endActivity(View view)
 	{
 		Intent currActivity = new Intent(this, EndActivity.class);
-		currActivity.putExtra("theme",  theme);
 		currActivity.putExtra("val1",  val1);
 		currActivity.putExtra("val2",  val2);
 		currActivity.putExtra("val3",  val3);

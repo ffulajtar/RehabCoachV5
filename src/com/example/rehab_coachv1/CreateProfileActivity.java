@@ -6,19 +6,10 @@ import android.view.Menu;
 
 public class CreateProfileActivity extends Activity {
 
-	int theme = 1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		theme = getIntent().getIntExtra("theme", 1);
-		if (theme == 0)
-		{
-			setTheme(android.R.style.Theme_Holo_Light);
-		}
-		else
-		{
-			setTheme(android.R.style.Theme_Holo);
-		}
+		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.activity_create_profile);
 	}
 
