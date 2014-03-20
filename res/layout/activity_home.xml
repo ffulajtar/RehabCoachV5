@@ -50,27 +50,16 @@
        	android:dividerHeight="5dp" >
         
     </ListView>
-    
+   
 
-    
-        <Button
-        android:id="@+id/change_theme"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/button1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       	android:layout_marginTop="30dp"
-       	android:layout_alignParentBottom="true"
-       	android:layout_alignParentRight="true"
-        android:text="@string/change_theme"
-        android:onClick="changetheme" />
-
-        <Button
-            android:id="@+id/button1"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/change_theme"
-            android:layout_toLeftOf="@+id/title"
-            android:text="View All Activities"
-            android:onClick="goToAllActivities" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/all_activities"
+        android:onClick="goToAllActivities" />
 
 </RelativeLayout>

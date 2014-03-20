@@ -23,31 +23,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/all_activities_title"
-        android:layout_above="@+id/change_theme"
+        android:layout_below="@+id/all_activities"
         android:divider="@drawable/activity_divider"
        	android:dividerHeight="5dp" >
         
     </ListView>
-    
-        <Button
-        android:id="@+id/change_theme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       	android:layout_marginTop="30dp"
-       	android:layout_alignParentBottom="true"
-       	android:layout_alignParentRight="true"
-        android:text="@string/change_theme"
-        android:onClick="changetheme" />
 
         <Button
             android:id="@+id/button1"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/change_theme"
-            android:layout_toLeftOf="@+id/title"
-            android:text="Your Activities"
+            android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentBottom="true"
+            android:text="@string/your_activities"
             android:onClick="goHome" />
 
 </RelativeLayout>

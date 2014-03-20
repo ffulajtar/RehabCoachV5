@@ -88,15 +88,6 @@
 		android:layout_weight="1.0"
 		android:onClick="adminMode"
 		android:text="Admin"/>
-   	
-	<Button
-        android:id="@+id/changetheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1.0"
-        android:layout_marginTop="30dp"
-        android:text="@string/change_theme"
-        android:onClick="changetheme" />
         
 </LinearLayout>
 

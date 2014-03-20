@@ -28,8 +28,8 @@ public class AdminActivity extends Activity {
 	}
 
 	public void editActivities(View view) {
-		Intent home = new Intent(this, HomeActivity.class);
-		startActivity(home);
+		//Intent home = new Intent(this, HomeActivity.class);
+		//startActivity(home);
 	}
 
 }

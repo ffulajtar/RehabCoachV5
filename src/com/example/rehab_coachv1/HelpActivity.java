@@ -1,5 +1,6 @@
 package com.example.rehab_coachv1;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -83,6 +84,14 @@ public class HelpActivity extends Activity {
 	{
 		Intent remind = new Intent (this, LostActivity.class);
 		startActivity(remind);	
+	}
+	
+	public void call911(View view)
+	{
+		Intent intent = new Intent(Intent.ACTION_DIAL);
+		String pn = "tel:" + "911";
+		intent.setData(Uri.parse(pn));
+		startActivity(intent);
 	}
 
 }

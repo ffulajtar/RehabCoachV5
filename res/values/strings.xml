@@ -44,6 +44,7 @@
     <string name="view_goals">View Goals</string>
     <string name="change_password">Change Password</string>
     <string name="change_contact_info">Change Contact Information</string>
+    <string name="change_emergency_contact_info">Change Emergency Contact Information</string>
     <string name="change_emergency_contact">Edit Emergency Contact</string>
     <string name="help_message">What do you need help with?</string>
     <string name="find_transportation">Find Transportation</string>
@@ -73,5 +74,8 @@
     <string name="title_activity_settings">SettingsActivity</string>
 	<string name="change_taxi">Change preferred taxi company</string>
 	<string name="settings">Settings</string>
+	<string name="all_activities">View All Activities</string>
+	<string name="your_activities">Your Activities</string>
+	
 
 </resources>

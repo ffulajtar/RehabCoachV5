@@ -59,6 +59,7 @@
         android:layout_weight="1.0"
         android:layout_marginTop="20dp"
         android:text="@string/call_911"
+        android:onClick="call911"
      	/>
     
     </LinearLayout>

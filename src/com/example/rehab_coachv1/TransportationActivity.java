@@ -1,10 +1,12 @@
 package com.example.rehab_coachv1;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class TransportationActivity extends Activity {
 
@@ -17,7 +19,7 @@ public class TransportationActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-			getMenuInflater().inflate(R.menu.dark, menu);
+		getMenuInflater().inflate(R.menu.dark, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -65,6 +67,13 @@ public class TransportationActivity extends Activity {
 		startActivity(remind);	
 	}
 
+	public void callTaxi(View view)
+	{
+		Intent intent = new Intent(Intent.ACTION_DIAL);
+		String pn = "tel:" + "6147777777";
+		intent.setData(Uri.parse(pn));
+		startActivity(intent);
+	}
 
 }
 

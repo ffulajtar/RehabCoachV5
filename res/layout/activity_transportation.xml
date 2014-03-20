@@ -42,6 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/bus"
         android:layout_marginTop="20dp"
-        android:text="@string/taxi" />
+        android:text="@string/taxi"
+        android:onClick="callTaxi" />
 
 </RelativeLayout>

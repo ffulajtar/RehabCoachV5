@@ -1,5 +1,6 @@
 package com.example.rehab_coachv1;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -72,6 +73,14 @@ public class LostActivity extends Activity {
 			Intent home = new Intent(this, TransportationActivity.class);
 			startActivity(home);
 		}
+	
+	public void call911(View view)
+	{
+		Intent intent = new Intent(Intent.ACTION_DIAL);
+		String pn = "tel:" + "911";
+		intent.setData(Uri.parse(pn));
+		startActivity(intent);
+	}
 
 }
 

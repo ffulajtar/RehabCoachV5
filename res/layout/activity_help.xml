@@ -46,6 +46,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/emergency_contact"
         android:text="@string/call_911"
+        android:onClick="call911"
      	/>
     
     <Button 
