@@ -29,23 +29,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:src="@drawable/profile_test" />
-   
-    <!--    
-    <Button 
-        android:id="@+id/change_contact_info"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/change_contact_info"
-        />
-        
-    <Button 
-        android:id="@+id/change_emergency_contact"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/change_emergency_contact"
-        /> -->
         
     <LinearLayout
 	    android:id="@+id/contact_info"
@@ -213,6 +196,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:text="@string/change_contact_info"
+        android:onClick="editContact"
         /> 
         
     <TextView

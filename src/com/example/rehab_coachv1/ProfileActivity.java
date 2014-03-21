@@ -1,10 +1,11 @@
 package com.example.rehab_coachv1;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class ProfileActivity extends Activity {
 	
@@ -64,6 +65,20 @@ public class ProfileActivity extends Activity {
 	public void openSettings() {
 		Intent remind = new Intent (this, SettingsActivity.class);
 		startActivity(remind);	
+	}
+	
+	public void editContact(View view)
+	{
+		Intent edit = new Intent(this, EditContactActivity.class);
+		edit.putExtra("info_type", 0);
+		startActivity(edit);
+	}
+	
+	public void editEmergencyContact(View view)
+	{
+		Intent edit = new Intent(this, EditContactActivity.class);
+		edit.putExtra("info_type", 1);
+		startActivity(edit);
 	}
 
 }

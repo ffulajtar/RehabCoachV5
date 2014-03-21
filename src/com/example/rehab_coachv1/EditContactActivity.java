@@ -8,18 +8,25 @@ import android.view.MenuItem;
 
 public class EditContactActivity extends Activity {
 
-
+	int info_type = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTheme(android.R.style.Theme_Holo);
-		setContentView(R.layout.activity_edit_emergency_contact);
+		if (info_type == 0)
+		{
+			setContentView(R.layout.activity_edit_contact);
+		}
+		else
+		{
+			setContentView(R.layout.activity_edit_emergency_contact);
+		}
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		
 		getMenuInflater().inflate(R.menu.dark, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
