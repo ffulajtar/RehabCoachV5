@@ -76,7 +76,7 @@ public class HelpActivity extends Activity {
 	
 	public void emergencyContact(View view)
 	{
-		Intent remind = new Intent (this, EmergencyContactActivity.class);
+		Intent remind = new Intent (this, EditContactActivity.class);
 		startActivity(remind);	
 	}
 	

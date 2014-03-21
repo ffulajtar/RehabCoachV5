@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class EmergencyContactActivity extends Activity {
+public class EditContactActivity extends Activity {
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTheme(android.R.style.Theme_Holo);
-		setContentView(R.layout.activity_emergency_contact);
+		setContentView(R.layout.activity_edit_emergency_contact);
 	}
 
 	@Override

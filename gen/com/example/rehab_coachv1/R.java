@@ -169,21 +169,22 @@ public final class R {
         public static final int activity_all=0x7f030001;
         public static final int activity_create_profile=0x7f030002;
         public static final int activity_during=0x7f030003;
-        public static final int activity_emergency_contact=0x7f030004;
-        public static final int activity_end=0x7f030005;
-        public static final int activity_help=0x7f030006;
-        public static final int activity_home=0x7f030007;
-        public static final int activity_login_dark=0x7f030008;
-        public static final int activity_login_light=0x7f030009;
-        public static final int activity_lost=0x7f03000a;
-        public static final int activity_profile=0x7f03000b;
-        public static final int activity_reminder=0x7f03000c;
-        public static final int activity_review=0x7f03000d;
-        public static final int activity_settings=0x7f03000e;
-        public static final int activity_transportation=0x7f03000f;
-        public static final int fragment_reminder_dummy=0x7f030010;
-        public static final int fragment_review_dummy=0x7f030011;
-        public static final int home_list_layout=0x7f030012;
+        public static final int activity_edit_contact=0x7f030004;
+        public static final int activity_edit_emergency_contact=0x7f030005;
+        public static final int activity_end=0x7f030006;
+        public static final int activity_help=0x7f030007;
+        public static final int activity_home=0x7f030008;
+        public static final int activity_login_dark=0x7f030009;
+        public static final int activity_login_light=0x7f03000a;
+        public static final int activity_lost=0x7f03000b;
+        public static final int activity_profile=0x7f03000c;
+        public static final int activity_reminder=0x7f03000d;
+        public static final int activity_review=0x7f03000e;
+        public static final int activity_settings=0x7f03000f;
+        public static final int activity_transportation=0x7f030010;
+        public static final int fragment_reminder_dummy=0x7f030011;
+        public static final int fragment_review_dummy=0x7f030012;
+        public static final int home_list_layout=0x7f030013;
     }
     public static final class menu {
         public static final int create_profile=0x7f0a0000;

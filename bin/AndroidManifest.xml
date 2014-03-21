@@ -63,7 +63,7 @@
             android:label="@string/title_activity_lost" >
         </activity>
         <activity
-            android:name="com.example.rehab_coachv1.EmergencyContactActivity"
+            android:name="com.example.rehab_coachv1.EditContactActivity"
             android:label="@string/title_activity_emergency_contact" >
         </activity>
         <activity
