@@ -13,7 +13,7 @@ public class LoginActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTheme(android.R.style.Theme_Holo);
-		setContentView(R.layout.activity_login_dark);
+		setContentView(R.layout.activity_login_light);
 
 		
 	}
