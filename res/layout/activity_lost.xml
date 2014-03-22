@@ -17,21 +17,32 @@
         android:text="@string/lost_title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ImageView
+<!--     <ImageView
         android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:src="@drawable/map_example" />
+        android:src="@drawable/map_example" /> -->
 
+            <fragment 
+          android:id="@+id/map"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_below="@+id/title"
+          android:layout_above="@+id/line"
+          android:layout_marginTop="25dp"
+          android:layout_marginBottom="25dp"
+          android:name="com.google.android.gms.maps.MapFragment">
+		</fragment>
+    
     <LinearLayout 
         android:id="@+id/line"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/map"
         android:layout_alignParentBottom="true"
          >
 
