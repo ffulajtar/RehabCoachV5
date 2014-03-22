@@ -23,6 +23,8 @@ public class DuringActivity extends FragmentActivity implements LocationListener
 
 	String activity_name;
 	int activity_id;
+
+
 	protected GoogleMap mMap;
 	protected LocationManager locationManager;
 	protected OnLocationChangedListener changeListener;
