@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity" >
-    
+
     <ImageView
         android:id="@+id/osumclogo"
         android:layout_width="wrap_content"
@@ -15,83 +15,112 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/osumclogo_invert" />
-    
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/osumclogo"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:text="@string/title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-         <ImageView
-         android:id="@+id/imageView1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/title"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="22dp"
-         android:src="@drawable/blocko_invert" />
 
-     <LinearLayout
-         android:id="@+id/line"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="30dp"
-         android:layout_below="@+id/imageView1"         
-         android:layout_centerHorizontal="true"
-         android:orientation="vertical" >
-         
-     <EditText
-        android:id="@+id/username"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:ems="10"
-        android:hint="@string/username_hint"
-        android:nextFocusDown="@+id/password" />
-    
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:hint="@string/password_hint"
-        android:inputType="textPassword"
-         />    
-    
-     </LinearLayout>
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/blocko_invert" />
 
-<LinearLayout
-    android:id="@+id/buttons_line"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true" >
-    
-     <Button
-        android:id="@+id/login"
+    <!-- Login progress -->
+
+    <LinearLayout
+        android:id="@+id/login_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       	android:layout_weight="1.0"
-       	android:layout_marginTop="30dp"
-        android:text="@string/login"
-        android:onClick="loginToApp" />
-     
-   	<Button
-        android:id="@+id/admin"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/login_status_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/login_progress_signing_in"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <!-- Login form -->
+
+    <LinearLayout
+        android:id="@+id/login_form"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-		android:layout_weight="1.0"
-		android:onClick="adminMode"
-		android:text="Admin"/>
-        
-</LinearLayout>
+        android:orientation="vertical" >
 
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@+id/password"
+            android:singleLine="true" />
 
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword" />
+    </LinearLayout>
 
-     
+    <LinearLayout
+        android:id="@+id/buttons_line"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/login"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1.0"
+            android:onClick="attemptLogin"
+            android:text="@string/login" >
+        </Button>
+
+        <Button
+            android:id="@+id/admin"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1.0"
+            android:onClick="adminMode"
+            android:text="@string/admin" >
+        </Button>
+    </LinearLayout>
+
 </RelativeLayout>
