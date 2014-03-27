@@ -76,6 +76,10 @@
 	<string name="settings">Settings</string>
 	<string name="all_activities">View All Activities</string>
 	<string name="your_activities">Your Activities</string>
+	<string name="email_hint">Email Address</string>
+	<string name="login_progress_signing_in">Signing In</string>
+	<string name="admin">Admin</string>
+	<string name="title_activity_login">Rehab_CoachV1</string>
 	
 
 </resources>
