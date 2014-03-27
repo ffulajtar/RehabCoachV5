@@ -57,6 +57,9 @@ public class ReminderActivity extends FragmentActivity {
 			remind_list.add(prereqCursor.getString(prereqCursor.getColumnIndex("name")));
 			prereqCursor.moveToNext();
 		}
+		prereqCursor.close();
+		database.close();
+		
 		Log.d("MIKE", "reminder_size = " + remind_list.size());
 	}
 	
@@ -275,9 +278,27 @@ public class ReminderActivity extends FragmentActivity {
 	}
 	
 
-	public void startActivity(View view)
+	public void goToDuringActivity(View view)
 	{
 		Intent currActivity = new Intent(this, DuringActivity.class);
+		currActivity.putExtra("act", activity_name);
+		currActivity.putExtra("act_id", activity_id);
+		startActivity(currActivity);
+		
+//		Intent currActivity = new Intent(this, LocationSelectionActivity.class);
+//		currActivity.putExtra("act", activity_name);
+//		currActivity.putExtra("act_id", activity_id);
+//		startActivity(currActivity);
+	}
+	
+	public void goToLocationSelection(View view)
+	{
+//		Intent currActivity = new Intent(this, DuringActivity.class);
+//		currActivity.putExtra("act", activity_name);
+//		currActivity.putExtra("act_id", activity_id);
+//		startActivity(currActivity);
+		
+		Intent currActivity = new Intent(this, LocationSelectionActivity.class);
 		currActivity.putExtra("act", activity_name);
 		currActivity.putExtra("act_id", activity_id);
 		startActivity(currActivity);

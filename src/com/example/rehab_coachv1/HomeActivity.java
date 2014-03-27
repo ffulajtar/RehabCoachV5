@@ -64,6 +64,8 @@ public class HomeActivity extends Activity {
 
 			activityCursor.moveToNext();
 		}
+		activityCursor.close();
+		database.close();
 	}
 	
 	private void getLeastRecentActivity(){
@@ -82,6 +84,8 @@ public class HomeActivity extends Activity {
 
 			activityCursor.moveToNext();
 		}
+		activityCursor.close();
+		database.close();
 	}
 	
 	/*

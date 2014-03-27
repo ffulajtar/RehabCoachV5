@@ -33,7 +33,7 @@ public class EndActivity extends Activity {
 		val4 = getIntent().getIntExtra("val4", 99);
 		val5 = getIntent().getIntExtra("val5", 99);
 		activity_id = getIntent().getIntExtra("act_id", 0);
-		//updateCompletedActivity();
+		updateCompletedActivity();
 		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.activity_end);
 		rotate();	
@@ -57,7 +57,7 @@ public class EndActivity extends Activity {
 		cv.put("times_complete", times_complete);
 		cv.put("last_time_completed", new_most_recent_completion);
 		database.update("activity", cv, "_id = ?", new String[]{Integer.toString(activity_id)});
-		
+		database.close();
 //		Cursor changeCursor = database.rawQuery("update activity set times_complete = ? where _id = ?", new String[]{Integer.toString(times_complete), Integer.toString(activity_id)});
 //		changeCursor = database.rawQuery("update activity set last_time_completed = ? where _id = ?", new String[]{Long.toString(new_most_recent_completion), Integer.toString(activity_id)}).;
 	}

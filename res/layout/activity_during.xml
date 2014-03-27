@@ -23,7 +23,16 @@
           android:layout_height="fill_parent"
           android:layout_centerHorizontal="true"
         android:layout_above="@+id/end_button"
+        android:layout_below="@+id/atv_places"
         android:layout_marginBottom="25dp"
-          android:name="com.google.android.gms.maps.MapFragment"/>
+          android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    
+      <com.example.rehab_coachv1.CustomAutoCompleteTextView
+        android:id="@+id/atv_places"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:hint="@string/str_atv_places"
+        android:singleLine="true" />
 
 </RelativeLayout>

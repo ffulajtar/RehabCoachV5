@@ -18,7 +18,9 @@
 
     <drawable name="activity_divider">#000000</drawable>
 
+    <string name="str_atv_places">Search For a Destination</string>
     <string name="title">Welcome to Rehab Coach</string>
+    <string name="location_prompt">Would you like to provide a destination for this activity?</string>
     <string name="username_hint">Enter Username</string>
     <string name="password_hint">Enter Password</string>
     <string name="login">Login</string>
@@ -56,6 +58,9 @@
     <string name="title_activity_emergency_contact">Rehab_CoachV1</string>
     <string name="bus">Find nearest bus route</string>
     <string name="taxi">Call Taxi</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="load">Load</string>
     <string name="home_title">Your Activities</string>
     <string name="all_activities_title">All Activities</string>
     <string name="lost_title">You Are Here</string>
@@ -72,6 +77,7 @@
     <string name="disability4">Wheelchair</string>
     <string name="least_activity_text">You haven\'t done this is a while</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_location_selection">LocationSelectionActivity</string>
 	<string name="change_taxi">Change preferred taxi company</string>
 	<string name="settings">Settings</string>
 	<string name="all_activities">View All Activities</string>
