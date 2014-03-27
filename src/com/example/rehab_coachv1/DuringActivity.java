@@ -70,8 +70,6 @@ public class DuringActivity extends FragmentActivity implements LocationListener
     ParserTask placesParserTask;
     ParserTask placeDetailsParserTask;
  
-    GoogleMap mMap;
- 
     final int PLACES=0;
     final int PLACES_DETAILS=1;
     
@@ -80,7 +78,8 @@ public class DuringActivity extends FragmentActivity implements LocationListener
 
 	private String activity_name;
 	private int activity_id;
-	
+
+	protected GoogleMap mMap;
 	private Location currentLoc;
 	
 	public void setUpMap(){
@@ -92,7 +91,7 @@ public class DuringActivity extends FragmentActivity implements LocationListener
 			}
 		}
 	}
-	
+	 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);

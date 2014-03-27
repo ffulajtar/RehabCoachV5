@@ -33,13 +33,10 @@ public class LostActivity extends Activity implements LocationListener, Location
 	protected LocationManager locationManager;
 	protected OnLocationChangedListener changeListener;
 	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-			setTheme(android.R.style.Theme_Holo);
-
+		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.activity_lost);
 		
 		locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -115,7 +112,6 @@ public class LostActivity extends Activity implements LocationListener, Location
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 			getMenuInflater().inflate(R.menu.dark, menu);
-
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -140,28 +136,24 @@ public class LostActivity extends Activity implements LocationListener, Location
 	    
 		public void openHome() {
 			Intent remind = new Intent (this, HomeActivity.class);
-
 			startActivity(remind);
 			
 		}
 
 		public void openProfile() {
 			Intent remind = new Intent (this, ProfileActivity.class);
-	
 			startActivity(remind);
 			
 		}
 
 		public void openHelp() {
 			Intent remind = new Intent (this, HelpActivity.class);
-	
 			startActivity(remind);	
 		}
 
 		public void findTransportation(View view)
 		{
 			Intent home = new Intent(this, TransportationActivity.class);
-
 			startActivity(home);
 		}
 		
