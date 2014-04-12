@@ -1,0 +1,122 @@
+# view res/layout/activity_reminder.xml #generated:36
+# view res/layout/activity_review.xml #generated:35
+-keep class android.support.v4.view.PagerTitleStrip { <init>(...); }
+
+# view res/layout/activity_reminder.xml #generated:22
+# view res/layout/activity_review.xml #generated:19
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:83
+-keep class com.example.rehab_coachv1.AdminActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:59
+-keep class com.example.rehab_coachv1.AllActivitiesActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:85
+-keep class com.example.rehab_coachv1.CreateProfileActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:65
+-keep class com.example.rehab_coachv1.DuringActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:81
+-keep class com.example.rehab_coachv1.EditContactActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:69
+-keep class com.example.rehab_coachv1.EndActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:89
+-keep class com.example.rehab_coachv1.GCMIntentService { <init>(...); }
+
+# view AndroidManifest.xml #generated:71
+-keep class com.example.rehab_coachv1.HelpActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:57
+-keep class com.example.rehab_coachv1.HomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:61
+-keep class com.example.rehab_coachv1.LocationSelectionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:77
+-keep class com.example.rehab_coachv1.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:79
+-keep class com.example.rehab_coachv1.LostActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.example.rehab_coachv1.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:73
+-keep class com.example.rehab_coachv1.ProfileActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:101
+-keep class com.example.rehab_coachv1.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:63
+-keep class com.example.rehab_coachv1.ReminderActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:67
+-keep class com.example.rehab_coachv1.ReviewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:87
+-keep class com.example.rehab_coachv1.SettingsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:75
+-keep class com.example.rehab_coachv1.TransportationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:90
+-keep class com.google.android.gcm.GCMBroadcastReceiver { <init>(...); }
+
+# view res/layout/activity_during.xml #generated:22
+# view res/layout/activity_lost.xml #generated:13
+-keep class com.google.android.gms.maps.SupportMapFragment { <init>(...); }
+
+# onClick res/layout/activity_login_dark.xml #generated:111
+# onClick res/layout/activity_login_light.xml #generated:114
+-keepclassmembers class * { *** adminMode(...); }
+
+# onClick res/layout/activity_login_dark.xml #generated:102
+# onClick res/layout/activity_login_light.xml #generated:103
+-keepclassmembers class * { *** attemptLogin(...); }
+
+# onClick res/layout/activity_help.xml #generated:41
+# onClick res/layout/activity_lost.xml #generated:43
+-keepclassmembers class * { *** call911(...); }
+
+# onClick res/layout/activity_transportation.xml #generated:38
+-keepclassmembers class * { *** callTaxi(...); }
+
+# onClick res/layout/activity_admin.xml #generated:21
+-keepclassmembers class * { *** createProfile(...); }
+
+# onClick res/layout/activity_admin.xml #generated:31
+-keepclassmembers class * { *** editActivities(...); }
+
+# onClick res/layout/activity_profile.xml #generated:191
+-keepclassmembers class * { *** editContact(...); }
+
+# onClick res/layout/activity_help.xml #generated:31
+-keepclassmembers class * { *** emergencyContact(...); }
+
+# onClick res/layout/activity_during.xml #generated:12
+# onClick res/layout/activity_end.xml #generated:11
+# onClick res/layout/fragment_review_dummy.xml #generated:143
+-keepclassmembers class * { *** endActivity(...); }
+
+# onClick res/layout/activity_help.xml #generated:52
+-keepclassmembers class * { *** findTransport(...); }
+
+# onClick res/layout/activity_lost.xml #generated:34
+-keepclassmembers class * { *** findTransportation(...); }
+
+# onClick res/layout/activity_all.xml #generated:32
+-keepclassmembers class * { *** goHome(...); }
+
+# onClick res/layout/activity_home.xml #generated:55
+-keepclassmembers class * { *** goToAllActivities(...); }
+
+# onClick res/layout/fragment_reminder_dummy.xml #generated:80
+-keepclassmembers class * { *** goToDuringActivity(...); }
+
+# onClick res/layout/activity_help.xml #generated:20
+-keepclassmembers class * { *** lost(...); }
+
