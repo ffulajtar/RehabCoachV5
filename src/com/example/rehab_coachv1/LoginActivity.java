@@ -50,7 +50,7 @@ public class LoginActivity extends Activity {
 					attemptLogin();
 					return true;
 				}
-				return false;
+				return false; 
 			}
 		});
 

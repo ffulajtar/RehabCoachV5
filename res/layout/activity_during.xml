@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -7,32 +8,48 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".DuringActivity" >
-    
-    <Button
-    android:id="@+id/end_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_alignParentBottom="true"
-    android:text="@string/end_activity"
-    android:onClick="endActivity" />
 
-    <fragment 
-          android:id="@+id/map"
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
-          android:layout_centerHorizontal="true"
-        android:layout_above="@+id/end_button"
+    <Button
+        android:id="@+id/end_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="1dp"
+        android:onClick="endActivity"
+        android:text="@string/end_activity" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/direction_display"
         android:layout_below="@+id/atv_places"
-        android:layout_marginBottom="25dp"
-          android:name="com.google.android.gms.maps.SupportMapFragment"/>
-    
-      <com.example.rehab_coachv1.CustomAutoCompleteTextView
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp" />
+
+    <AutoCompleteTextView
         android:id="@+id/atv_places"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:hint="@string/str_atv_places"
         android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/direction_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/end_button"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:maxLines="3"
+        android:textColor="#33ccff"
+        android:textSize="18sp"
+        android:textStyle="bold" >
+
+
+    </TextView>
 
 </RelativeLayout>

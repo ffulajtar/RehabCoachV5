@@ -7,9 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import com.example.rehab_coachv1.PersonContract.PersonDbHelper;
-import com.example.rehab_coachv1.PersonContract.PersonEntry;
-
 /**
  * The Main Activity.
  * };
@@ -26,11 +23,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		PersonDbHelper mDbHelper = new PersonDbHelper(this.getBaseContext());
+		ExternalDbOpenHelper dbHelper = new ExternalDbOpenHelper(this.getBaseContext(), "rehab_coach");
 		
-		SQLiteDatabase db = mDbHelper.getReadableDatabase();
+		SQLiteDatabase db = dbHelper.getReadableDatabase();
 		
-		Cursor c = db.rawQuery("SELECT * FROM "+ PersonEntry.TABLE_NAME, null);
+		Cursor c = db.rawQuery("SELECT * FROM "+ "person", null);
 		
 		
 		//if no user is present, create one
@@ -48,14 +45,17 @@ public class MainActivity extends Activity {
 
 		//go to log in with user importing existing project info
 		c.moveToFirst();
-		System.out.println("User("+ c.getString(c.getColumnIndexOrThrow(PersonEntry.COLUMN_NAME_NAME))+") found!");
+		System.out.println("User("+ c.getString(c.getColumnIndexOrThrow("name"))+") found!");
 
 		// Start up LoginActivity right away
 		Intent intent = new Intent(this, LoginActivity.class);
-		intent.putExtra("EMAIL",c.getString(c.getColumnIndexOrThrow(PersonEntry.COLUMN_NAME_EMAIL))); 
-		intent.putExtra("PASSWORD",c.getString(c.getColumnIndexOrThrow(PersonEntry.COLUMN_NAME_PASSWORD)));
+		intent.putExtra("EMAIL",c.getString(c.getColumnIndexOrThrow("email"))); 
+		intent.putExtra("PASSWORD",c.getString(c.getColumnIndexOrThrow("password")));
 		startActivity(intent);
 	
+		dbHelper.close();
+		db.close();
+		c.close();
 		finish();
 		}
 	}

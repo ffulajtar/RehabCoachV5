@@ -59,6 +59,7 @@ public class ReminderActivity extends FragmentActivity {
 		}
 		prereqCursor.close();
 		database.close();
+		dbHelper.close();
 		
 		Log.d("MIKE", "reminder_size = " + remind_list.size());
 	}

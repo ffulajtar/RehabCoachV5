@@ -1,12 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rehab_coachv1"
-    android:versionCode="1"
-    android:versionName="1.0" >
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.example.rehab_coachv1">
 
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="19" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
 
 <!-- <<<<<<< HEAD
     
@@ -28,108 +22,83 @@
     	<uses-feature
 ======= -->
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="pt.example.project.permission.MAPS_RECEIVE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="pt.example.project.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
     <!--
          The following two permissions are not required to use
 	     Google Maps Android API v2, but are recommended.
     -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
-    <uses-feature
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
 
-        android:glEsVersion="0x00020000"
-        android:required="true" />
+    <permission android:name="com.example.rehab_coachv1.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyA7WV29EXYyx3rH5d-BClFb1sOYkYv8Svk" />
+   <uses-permission android:name="com.example.rehab_coachv1.permission.C2D_MESSAGE"/>
+   <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+   <uses-permission android:name="android.permission.WAKE_LOCK"/>
+   <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+   <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+   <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAiJU7ASEYnCUcs64xEy5itKFCsLiFaqiU"/>
 
-        <activity
-            android:name="com.example.rehab_coachv1.MainActivity"
-            android:label="@string/app_name" >
+        <activity android:label="@string/app_name" android:name="com.example.rehab_coachv1.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.HomeActivity"
-            android:label="@string/title_activity_home" >
+        <activity android:label="@string/title_activity_home" android:name="com.example.rehab_coachv1.HomeActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.AllActivitiesActivity"
-            android:label="@string/title_activity_all" >
+        <activity android:label="@string/title_activity_all" android:name="com.example.rehab_coachv1.AllActivitiesActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.LocationSelectionActivity"
-            android:label="@string/title_activity_location_selection" >
+        <activity android:label="@string/title_activity_location_selection" android:name="com.example.rehab_coachv1.LocationSelectionActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.ReminderActivity"
-            android:label="@string/title_activity_reminder" >
+        <activity android:label="@string/title_activity_reminder" android:name="com.example.rehab_coachv1.ReminderActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.DuringActivity"
-            android:label="@string/title_activity_during" >
+        <activity android:label="@string/title_activity_during" android:name="com.example.rehab_coachv1.DuringActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.ReviewActivity"
-            android:label="@string/title_activity_review" >
+        <activity android:label="@string/title_activity_review" android:name="com.example.rehab_coachv1.ReviewActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.EndActivity"
-            android:label="@string/title_activity_end" >
+        <activity android:label="@string/title_activity_end" android:name="com.example.rehab_coachv1.EndActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.HelpActivity"
-            android:label="@string/title_activity_help" >
+        <activity android:label="@string/title_activity_help" android:name="com.example.rehab_coachv1.HelpActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.ProfileActivity"
-            android:label="@string/title_activity_profile" >
+        <activity android:label="@string/title_activity_profile" android:name="com.example.rehab_coachv1.ProfileActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.TransportationActivity"
-            android:label="@string/title_activity_transportation" >
+        <activity android:label="@string/title_activity_transportation" android:name="com.example.rehab_coachv1.TransportationActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.LoginActivity"
-            android:label="@string/title_activity_login" >
+        <activity android:label="@string/title_activity_login" android:name="com.example.rehab_coachv1.LoginActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.LostActivity"
-            android:label="@string/title_activity_lost" >
+        <activity android:label="@string/title_activity_lost" android:name="com.example.rehab_coachv1.LostActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.EditContactActivity"
-            android:label="@string/title_activity_emergency_contact" >
+        <activity android:label="@string/title_activity_emergency_contact" android:name="com.example.rehab_coachv1.EditContactActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.AdminActivity"
-            android:label="@string/title_activity_admin" >
+        <activity android:label="@string/title_activity_admin" android:name="com.example.rehab_coachv1.AdminActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.CreateProfileActivity"
-            android:label="@string/title_activity_create_profile" >
+        <activity android:label="@string/title_activity_create_profile" android:name="com.example.rehab_coachv1.CreateProfileActivity">
         </activity>
-        <activity
-            android:name="com.example.rehab_coachv1.SettingsActivity"
-            android:label="@string/title_activity_settings" >
+        <activity android:label="@string/title_activity_settings" android:name="com.example.rehab_coachv1.SettingsActivity">
         </activity>
-    </application>
+        <service android:name=".GCMIntentService"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.example.rehab_coachv1"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.example.rehab_coachv1"/>
+            </intent-filter>
+        </receiver>
+    
+        <activity android:launchMode="singleTop" android:name=".RegisterActivity"/>
+</application>
 
 </manifest>

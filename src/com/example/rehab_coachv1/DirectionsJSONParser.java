@@ -9,6 +9,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.location.Location;
+import android.location.LocationManager;
+import android.util.Log;
 import android.util.Pair;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -40,9 +43,76 @@ public class DirectionsJSONParser {
 		return returnPair;
 
 	}
+	
+	public List<DirectionsStep> getFirstRouteDirections(JSONObject jObject){
+		List<DirectionsStep> result = new ArrayList<DirectionsStep>();
+
+		JSONArray jRoutes = null;
+		JSONArray jLegs = null;
+		JSONArray jSteps = null;
+
+		try {
+
+			jRoutes = jObject.getJSONArray("routes");
+
+			jLegs = ( (JSONObject)jRoutes.get(0)).getJSONArray("legs");
+			
+			/** Traversing all legs */
+			for(int j=0;j<jLegs.length();j++){
+				jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
+				
+				/** Traversing all steps */
+				for(int k=0;k<jSteps.length();k++){
+					String HtmlInstructions;
+					String distance;
+					String duration;
+					Location startLocation;
+					Location endLocation;
+					double latHolder, lonHolder;
+
+					HtmlInstructions = (String)((JSONObject)jSteps.get(k)).get("html_instructions");
+					distance = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("distance")).get("text");
+					duration = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("duration")).get("text");
+
+
+					
+					latHolder = ((JSONObject)((JSONObject)jSteps.get(k)).get("end_location")).getDouble("lat");
+					lonHolder = ((JSONObject)((JSONObject)jSteps.get(k)).get("end_location")).getDouble("lng");
+					endLocation = new Location(LocationManager.GPS_PROVIDER);
+					endLocation.setLatitude(latHolder);
+					endLocation.setLongitude(lonHolder);
+					
+					latHolder = ((JSONObject)((JSONObject)jSteps.get(k)).get("start_location")).getDouble("lat");
+					lonHolder = ((JSONObject)((JSONObject)jSteps.get(k)).get("start_location")).getDouble("lng");
+					startLocation = new Location(LocationManager.GPS_PROVIDER);
+					startLocation.setLatitude(latHolder);
+					startLocation.setLongitude(lonHolder);
+					
+
+					
+					DirectionsStep stepToAdd = new DirectionsStep();
+					stepToAdd.distance = distance;
+					stepToAdd.duration = duration;
+					stepToAdd.endLocation = endLocation;
+					stepToAdd.startLocation = startLocation;
+					stepToAdd.HtmlInstructions = android.text.Html.fromHtml(HtmlInstructions).toString();
+					result.add(stepToAdd);
+					Log.d("Mike result size :", Integer.toString(result.size()));
+				}
+
+			}
+
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}catch (Exception e){
+		}
+
+
+		return result;
+	}
 
    /** Receives a JSONObject and returns a list of lists containing latitude and longitude */
-   public List<List<HashMap<String,String>>> parse(JSONObject jObject){
+   public List<List<HashMap<String,String>>> getPolies(JSONObject jObject){
 
        List<List<HashMap<String, String>>> routes = new ArrayList<List<HashMap<String,String>>>() ;
        JSONArray jRoutes = null;

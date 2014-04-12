@@ -50,7 +50,7 @@
     <string name="change_emergency_contact">Edit Emergency Contact</string>
     <string name="help_message">What do you need help with?</string>
     <string name="find_transportation">Find Transportation</string>
-    <string name="lost">I\'m lost</string>
+    <string name="lost">Get Me Home</string>
     <string name="emergency_contact">I need my Emergency Contact</string>
     <string name="call_911">Call 911</string>
     <string name="title_activity_transportation">Rehab_CoachV1</string>
@@ -75,7 +75,7 @@
     <string name="disability2">Deaf</string>
     <string name="disability3">Blind</string>
     <string name="disability4">Wheelchair</string>
-    <string name="least_activity_text">You haven\'t done this is a while</string>
+    <string name="least_activity_text">You haven\'t done this in a while</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_activity_location_selection">LocationSelectionActivity</string>
 	<string name="change_taxi">Change preferred taxi company</string>
